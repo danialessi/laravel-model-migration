@@ -1,16 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Dettaglio pacchetti:</h1>
-    <div><strong>Nome: </strong>{{ $travel->name }}</div>
-    <div><strong>Destinazione: </strong>{{ $travel->destination }}</div>
-    <div><strong>Descrizione: </strong>{{ $travel->description }}</div>
-    <div><strong>Price: </strong>{{ $travel->price }} €</div>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('main_content')
+    <div class="container">
+
+        <div class="travel-title">
+            <h2>{{ $travel->name }}</h2>  
+        </div>
+
+        <div class="package-container">
+            
+            <div class="travel-image">
+                <img src="{{ $travel->image}}" alt="">
+            </div>
+    
+            <div class="details-container">
+                <h3>La tua vacanza</h3>
+
+                <div class="details">
+                    
+                    <div><strong>Destinazione: </strong>{{ $travel->destination }}</div>
+                    <div><strong>Descrizione: </strong>{{ $travel->description }}</div>
+                    <div class="price">
+                        {{ $travel->price }} €
+                    </div>
+                </div>
+                
+                </div>
+            
+        </div>
+        
+    </div>
+    
+@endsection
