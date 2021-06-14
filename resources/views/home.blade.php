@@ -30,15 +30,18 @@
             
                 
                 <div class="image">
-                    <img src="{{$travel->image}}" alt="">
-                    <div class="layover"></div>
+                    <a href="{{ route('detail', ['id' => $travel['id']]) }}">
+                        <img src="{{$travel->image}}" alt="">
+                        <div class="layover"></div>
+                    </a>
+                    
                 </div>
                 
                 <div class="info">
-                    <div><strong>Nome: </strong>{{ $travel->name}}</div>
-                    <div><strong>Destinazione: </strong>{{ $travel->destination}}</div>
-                    <div><strong>Descrizione: </strong>{{ $travel->description}}</div>
-                    <div><strong>Prezzo: </strong>{{ $travel->price}} €</div>
+                    <a href="{{ route('detail', ['id' => $travel['id']]) }}">
+                        <h2>{{ $travel->name}}</h2>
+                        <h4>{{ $travel->destination}}</h4>
+                    </a>
                 </div>
 
             </div>

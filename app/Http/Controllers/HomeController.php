@@ -16,4 +16,14 @@ class HomeController extends Controller
 
         return view('home', $data);
     }
+
+    public function detail($id) {
+        $travel = Travel::findOrFail($id);
+
+        $data = [
+            'travel' => $travel
+        ];
+
+        return view('detail', $data);
+    }
 }
